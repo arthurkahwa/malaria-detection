@@ -12,6 +12,8 @@ On-device malaria cell classification for iOS, combining a Core ML CNN with an o
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Planned-orange)
 
+![Banner](images/malaria_detection_marketing_thumbnail.svg)
+
 ## Overview
 
 Malaria is a life-threatening disease traditionally diagnosed by manual microscopy of thin blood smears — a slow, error-prone workflow that depends on scarce specialist labour and is especially strained in resource-limited regions. **Malaria Detector** is a planned iOS application that brings a trained convolutional classifier to the clinician's pocket: an image of a red blood cell (from the Photo Library or live camera) is classified as *Parasitized* or *Uninfected* on-device in under 10 ms, with no patient data leaving the phone.
