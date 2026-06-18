@@ -1,0 +1,20 @@
+name: release-ios
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release-ios:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Placeholder — TestFlight upload not implemented
+        run: |
+          echo "TODO: Phase 17 — TestFlight upload via Fastlane or \`xcrun altool\`. \
+          Requires Apple Developer Program enrollment by the deployer \
+          (see docs/STORE_SUBMISSION.md)."
+          exit 0

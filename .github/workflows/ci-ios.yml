@@ -1,0 +1,75 @@
+name: ci-ios
+
+on:
+  pull_request:
+    paths:
+      - "iosApp/**"
+      - "shared/**"
+      - ".github/workflows/ci-ios.yml"
+  push:
+    branches: [main]
+    paths:
+      - "iosApp/**"
+      - "shared/**"
+
+jobs:
+  build-ios:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Build shared XCFramework
+        run: ./gradlew :shared:assembleSharedXCFramework
+
+      - name: Copy XCFramework into iosApp
+        run: |
+          mkdir -p iosApp/SharedFramework
+          rm -rf iosApp/SharedFramework/Shared.xcframework
+          cp -R shared/build/XCFrameworks/release/Shared.xcframework iosApp/SharedFramework/
+
+      - name: Generate Xcode project
+        run: xcodegen generate --spec iosApp/project.yml --project iosApp
+
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild \
+            -project iosApp/MalariaDetector.xcodeproj \
+            -scheme MalariaDetector \
+            -destination 'platform=iOS Simulator,OS=latest,name=iPhone 17 Pro' \
+            -configuration Debug \
+            build
+
+      - name: Run iOS unit tests
+        run: |
+          xcodebuild test \
+            -project iosApp/MalariaDetector.xcodeproj \
+            -scheme MalariaDetector \
+            -destination 'platform=iOS Simulator,OS=latest,name=iPhone 17 Pro' \
+            -configuration Debug \
+            -enableCodeCoverage YES \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
+
+      # TODO (Phase 17): once the CI image stably ships `xcrun privacycli`
+      # and SwiftLint, add:
+      #   - PrivacyInfo.xcprivacy validation via `xcrun privacycli`
+      #   - `swiftlint --strict`
+      # See spec §21 (`ci-ios.yml` deliverables).
+      #
+      # Known limitation: macos-14 runners ship the latest stable iOS
+      # simulator runtime which may not be iOS 26 yet. The `OS=latest`
+      # destination uses whatever the runner has; once the runner image
+      # ships iOS 26 simulators, the spec deployment target is honoured.

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portuguese translations scaffold for malaria-detector (spec §15).
+     Chrome entries carry "(PLEASE TRANSLATE)" so an accidental
+     release-without-translation is grep-able. Override-reason
+     display strings stay English per spec §15 and are marked
+     translatable="false". Resource resolution falls back to
+     values/strings.xml for any missing entry, so removing or
+     adding individual entries during the translation round is
+     safe. Crowdin writes target translations into this file. -->
+<resources>
+    <string name="app_name">Malaria Detector (PLEASE TRANSLATE)</string>
+
+    <string name="tab_home">Home (PLEASE TRANSLATE)</string>
+    <string name="tab_history">History (PLEASE TRANSLATE)</string>
+    <string name="tab_settings">Settings (PLEASE TRANSLATE)</string>
+    <string name="tab_about">About (PLEASE TRANSLATE)</string>
+
+    <string name="unlock">Unlock (PLEASE TRANSLATE)</string>
+    <string name="tap_to_unlock">Tap to unlock (PLEASE TRANSLATE)</string>
+    <string name="capture">Capture (PLEASE TRANSLATE)</string>
+    <string name="override">Override (PLEASE TRANSLATE)</string>
+    <string name="end_session">End session (PLEASE TRANSLATE)</string>
+
+    <!-- Onboarding (Phase 7). English-only per spec §15; Phase 12 adds
+         Swahili/French/Portuguese resource folders. Keys mirror the iOS
+         `Localizable.xcstrings` 1:1 so cross-platform diff tooling stays
+         simple. The wizard composables currently hardcode the same English
+         copy for parity with the iOS reference; these resource entries
+         exist so Phase 12 can swap to `stringResource(...)` lookups
+         without renaming. -->
+    <string name="onb_continue">Continue (PLEASE TRANSLATE)</string>
+    <string name="onb_skip">Skip (PLEASE TRANSLATE)</string>
+    <string name="onb_register_biometric">Register biometric (PLEASE TRANSLATE)</string>
+    <string name="onb_verifying">Verifying… (PLEASE TRANSLATE)</string>
+    <string name="onb_cancel">Cancel (PLEASE TRANSLATE)</string>
+
+    <string name="onb_language_title">Choose language (PLEASE TRANSLATE)</string>
+    <string name="onb_language_subtitle">Pick the language for the app. You can change this later from Settings. (PLEASE TRANSLATE)</string>
+    <string name="onb_language_label">Language (PLEASE TRANSLATE)</string>
+
+    <string name="onb_welcome_title">Welcome (PLEASE TRANSLATE)</string>
+
+    <string name="onb_license_title">Hippocratic License (PLEASE TRANSLATE)</string>
+    <string name="onb_license_subtitle">Read the full license, then acknowledge to continue. (PLEASE TRANSLATE)</string>
+    <string name="onb_license_consent">I have read and accept the Hippocratic License 3.0 (HL3-FULL). (PLEASE TRANSLATE)</string>
+
+    <string name="onb_disclaimer_title">Medical-device disclaimer (PLEASE TRANSLATE)</string>
+    <string name="onb_disclaimer_subtitle">Read the full disclaimer, then acknowledge to continue. (PLEASE TRANSLATE)</string>
+    <string name="onb_disclaimer_consent">I understand this software is not a certified medical device and accept the disclaimer above. (PLEASE TRANSLATE)</string>
+
+    <string name="onb_clinic_title">Clinic details (PLEASE TRANSLATE)</string>
+    <string name="onb_clinic_subtitle">These appear on exports and in the audit log. You can change them later in Settings (admin biometric required). (PLEASE TRANSLATE)</string>
+    <string name="onb_clinic_name">Clinic name (PLEASE TRANSLATE)</string>
+    <string name="onb_clinic_jurisdiction">Jurisdiction (PLEASE TRANSLATE)</string>
+    <string name="onb_clinic_lawful_basis">Lawful basis (PLEASE TRANSLATE)</string>
+
+    <string name="onb_policy_title">Inference policy (PLEASE TRANSLATE)</string>
+    <string name="onb_policy_subtitle">These choices apply to every prediction this device makes. Admins can adjust them later from Settings. (PLEASE TRANSLATE)</string>
+    <string name="onb_policy_default_model">Default model (PLEASE TRANSLATE)</string>
+    <string name="onb_policy_auto_logout">Auto-logout (PLEASE TRANSLATE)</string>
+
+    <string name="onb_admin_biometric_title">Register administrator biometric (PLEASE TRANSLATE)</string>
+    <string name="onb_admin_biometric_subtitle">This authorizes admin-only actions like changing the threshold or wiping the device. It is not used for routine screening. (PLEASE TRANSLATE)</string>
+
+    <string name="onb_provisioned_title">Device provisioned (PLEASE TRANSLATE)</string>
+    <string name="onb_provisioned_subtitle">Phase 1 is complete. (PLEASE TRANSLATE)</string>
+    <string name="onb_provisioned_done">Done — hand to microscopist (PLEASE TRANSLATE)</string>
+    <string name="onb_provisioned_continue_phase_2">You\'re the microscopist too? Continue Phase 2 now (PLEASE TRANSLATE)</string>
+
+    <string name="onb_micro_welcome_title">Welcome, microscopist (PLEASE TRANSLATE)</string>
+
+    <string name="onb_initials_title">Your initials (PLEASE TRANSLATE)</string>
+    <string name="onb_initials_subtitle">Up to two characters. These appear next to your overrides in the audit log. Optional — you can skip this. (PLEASE TRANSLATE)</string>
+
+    <string name="onb_micro_biometric_title">Register your biometric (PLEASE TRANSLATE)</string>
+    <string name="onb_micro_biometric_subtitle">Use fingerprint, face unlock, or your device PIN. This is how you\'ll unlock the app each session. (PLEASE TRANSLATE)</string>
+
+    <string name="onb_orientation_title">Quick orientation (PLEASE TRANSLATE)</string>
+    <string name="onb_orientation_subtitle">Three short cards. Swipe to navigate or skip to the end. (PLEASE TRANSLATE)</string>
+    <string name="onb_orientation_skip">Skip orientation (PLEASE TRANSLATE)</string>
+    <string name="onb_orientation_next">Next (PLEASE TRANSLATE)</string>
+    <string name="onb_orientation_begin">Begin screening (PLEASE TRANSLATE)</string>
+
+    <!-- History tab (Phase 10). English-only per spec §15. Keys mirror the
+         iOS `Localizable.xcstrings` 1:1 so cross-platform diff tooling
+         stays simple. The composables currently hardcode the same English
+         copy for parity with the iOS reference; entries exist so Phase 12
+         can swap to `stringResource(...)` lookups without renaming. -->
+    <string name="hist_action">Action (PLEASE TRANSLATE)</string>
+    <string name="hist_actor">Actor (PLEASE TRANSLATE)</string>
+    <string name="hist_ai_analysis">AI Analysis (PLEASE TRANSLATE)</string>
+    <string name="hist_all">All (PLEASE TRANSLATE)</string>
+    <string name="hist_ascii_only">ASCII only, no emoji (PLEASE TRANSLATE)</string>
+    <string name="hist_audit_entry">Audit entry (PLEASE TRANSLATE)</string>
+    <string name="hist_audit_log">Audit log (PLEASE TRANSLATE)</string>
+    <string name="hist_cancel">Cancel (PLEASE TRANSLATE)</string>
+    <string name="hist_candidates">Candidates (PLEASE TRANSLATE)</string>
+    <string name="hist_choose_original">Choose the original prediction that this one duplicates. The duplicate stays in storage — no data is deleted. (PLEASE TRANSLATE)</string>
+    <string name="hist_context">Context (PLEASE TRANSLATE)</string>
+    <string name="hist_copied">Copied! (PLEASE TRANSLATE)</string>
+    <string name="hist_data_management">Data management (PLEASE TRANSLATE)</string>
+    <string name="hist_date_range">Date range (PLEASE TRANSLATE)</string>
+    <string name="hist_edit_label">Edit label (PLEASE TRANSLATE)</string>
+    <string name="hist_entries">Entries (PLEASE TRANSLATE)</string>
+    <string name="hist_environment">Environment (PLEASE TRANSLATE)</string>
+    <string name="hist_export_all">Export all data (PLEASE TRANSLATE)</string>
+    <string name="hist_filter">Filter (PLEASE TRANSLATE)</string>
+    <string name="hist_flagged_for_review">Flagged for review (PLEASE TRANSLATE)</string>
+    <string name="hist_from">From (PLEASE TRANSLATE)</string>
+    <string name="hist_history">History (PLEASE TRANSLATE)</string>
+    <string name="hist_image_hash">Image hash (PLEASE TRANSLATE)</string>
+    <string name="hist_label">Label (PLEASE TRANSLATE)</string>
+    <string name="hist_label_pii_warning">Labels appear in exports and audit reports. Do not include identifying information per your clinic\'s privacy policy. (PLEASE TRANSLATE)</string>
+    <string name="hist_lock">Lock (PLEASE TRANSLATE)</string>
+    <string name="hist_lock_device">Lock device (PLEASE TRANSLATE)</string>
+    <string name="hist_lock_device_question">Lock device? (PLEASE TRANSLATE)</string>
+    <string name="hist_lock_device_caption">Locks the current session immediately. Biometric or device passcode required to unlock. (PLEASE TRANSLATE)</string>
+    <string name="hist_lock_dialog_message">The next person using this device must re-authenticate with biometrics or the device passcode. (PLEASE TRANSLATE)</string>
+    <string name="hist_mark">Mark (PLEASE TRANSLATE)</string>
+    <string name="hist_mark_as_duplicate">Mark as duplicate (PLEASE TRANSLATE)</string>
+    <string name="hist_mark_as_duplicate_of">Mark as duplicate of… (PLEASE TRANSLATE)</string>
+    <string name="hist_mark_as_duplicate_question">Mark as duplicate? (PLEASE TRANSLATE)</string>
+    <string name="hist_metadata">Metadata (PLEASE TRANSLATE)</string>
+    <string name="hist_no_matching">No matching entries (PLEASE TRANSLATE)</string>
+    <string name="hist_no_other_in_session">No other predictions in this session. (PLEASE TRANSLATE)</string>
+    <string name="hist_no_predictions">No predictions yet (PLEASE TRANSLATE)</string>
+    <string name="hist_no_sessions">No sessions yet (PLEASE TRANSLATE)</string>
+    <string name="hist_nothing_flagged">Nothing flagged (PLEASE TRANSLATE)</string>
+    <string name="hist_open_session">Open session (PLEASE TRANSLATE)</string>
+    <string name="hist_overview">Overview (PLEASE TRANSLATE)</string>
+    <string name="hist_phase_11_not_implemented">Phase 11 — not yet implemented (PLEASE TRANSLATE)</string>
+    <string name="hist_phase_13_not_implemented">Phase 13 — not yet implemented (PLEASE TRANSLATE)</string>
+
+    <!-- Phase 9 review override (spec §12). English-only per spec §15;
+         reason labels in particular must stay English even in localised
+         builds. Keys mirror the iOS `Localizable.xcstrings` 1:1. -->
+    <string name="ov_corrected_verdict">Corrected verdict (PLEASE TRANSLATE)</string>
+    <string name="ov_reason">Reason (PLEASE TRANSLATE)</string>
+    <string name="ov_override_by">Override by (PLEASE TRANSLATE)</string>
+    <string name="ov_initials">Initials (PLEASE TRANSLATE)</string>
+    <string name="ov_initials_helper">Defaults to the device clinician\'s initials. Overwrite if a second reviewer recorded this override. (PLEASE TRANSLATE)</string>
+    <string name="ov_notes">Notes (PLEASE TRANSLATE)</string>
+    <string name="ov_optional_notes">Optional notes (PLEASE TRANSLATE)</string>
+    <string name="ov_context_reviewed">I have reviewed the full session context for this prediction (PLEASE TRANSLATE)</string>
+    <string name="ov_required_to_save">Required to enable Save. (PLEASE TRANSLATE)</string>
+    <string name="ov_save">Save override (PLEASE TRANSLATE)</string>
+    <string name="ov_choose">Choose… (PLEASE TRANSLATE)</string>
+    <string name="ov_confirm_biometric">Confirm review override (PLEASE TRANSLATE)</string>
+    <string name="ov_saved">Override saved. (PLEASE TRANSLATE)</string>
+    <string name="ov_reason_image_quality" translatable="false">Image quality</string>
+    <string name="ov_reason_atypical_morphology" translatable="false">Atypical morphology</string>
+    <string name="ov_reason_model_false_positive" translatable="false">Model false-positive</string>
+    <string name="ov_reason_model_false_negative" translatable="false">Model false-negative</string>
+    <string name="ov_reason_other" translatable="false">Other</string>
+    <string name="hist_predictions">Predictions (PLEASE TRANSLATE)</string>
+    <string name="hist_recent_predictions">Recent predictions (PLEASE TRANSLATE)</string>
+    <string name="hist_reset_device">Reset device (PLEASE TRANSLATE)</string>
+    <string name="hist_resource">Resource (PLEASE TRANSLATE)</string>
+    <string name="hist_review_and_override">Review and override (PLEASE TRANSLATE)</string>
+    <string name="hist_save">Save (PLEASE TRANSLATE)</string>
+    <string name="hist_session">Session (PLEASE TRANSLATE)</string>
+    <string name="hist_session_is_empty">Session is empty (PLEASE TRANSLATE)</string>
+    <string name="hist_session_label">Session label (PLEASE TRANSLATE)</string>
+    <string name="hist_sessions">Sessions (PLEASE TRANSLATE)</string>
+    <string name="hist_show_duplicates">Show duplicates (PLEASE TRANSLATE)</string>
+    <string name="hist_to">To (PLEASE TRANSLATE)</string>
+    <string name="hist_verdict">Verdict (PLEASE TRANSLATE)</string>
+
+    <!-- Settings tab (Phase 11). English-only per spec §15. Keys mirror
+         the iOS Localizable.xcstrings 1:1 so cross-platform diff tooling
+         stays simple. -->
+    <string name="set_settings">Settings (PLEASE TRANSLATE)</string>
+    <string name="set_clinic">Clinic (PLEASE TRANSLATE)</string>
+    <string name="set_clinic_name">Name (PLEASE TRANSLATE)</string>
+    <string name="set_clinic_jurisdiction">Jurisdiction (PLEASE TRANSLATE)</string>
+    <string name="set_clinic_lawful_basis">Lawful basis (PLEASE TRANSLATE)</string>
+    <string name="set_clinic_footer">Clinic identity is set during admin provisioning and can only change via Reset device. (PLEASE TRANSLATE)</string>
+    <string name="set_clinician_profile">Clinician profile (PLEASE TRANSLATE)</string>
+    <string name="set_uuid">UUID (PLEASE TRANSLATE)</string>
+    <string name="set_role">Role (PLEASE TRANSLATE)</string>
+    <string name="set_initials">Initials (PLEASE TRANSLATE)</string>
+    <string name="set_copied">Copied! (PLEASE TRANSLATE)</string>
+    <string name="set_inference">Inference (PLEASE TRANSLATE)</string>
+    <string name="set_decision_threshold">Decision threshold (PLEASE TRANSLATE)</string>
+    <string name="set_default_model">Default model (PLEASE TRANSLATE)</string>
+    <string name="set_auto_logout">Auto-logout (PLEASE TRANSLATE)</string>
+    <string name="set_models">Models (PLEASE TRANSLATE)</string>
+    <string name="set_bundled">Bundled (PLEASE TRANSLATE)</string>
+    <string name="set_downloaded">Downloaded (PLEASE TRANSLATE)</string>
+    <string name="set_available">Available (PLEASE TRANSLATE)</string>
+    <string name="set_no_downloaded_models">No downloaded models (PLEASE TRANSLATE)</string>
+    <string name="set_clear_all_caches">Clear all caches (PLEASE TRANSLATE)</string>
+    <string name="set_no_cached_models">No cached models in v1 scope. (PLEASE TRANSLATE)</string>
+    <string name="set_language">Language (PLEASE TRANSLATE)</string>
+    <string name="set_legal">Legal (PLEASE TRANSLATE)</string>
+    <string name="set_privacy_policy">Privacy policy (PLEASE TRANSLATE)</string>
+    <string name="set_terms_of_service">Terms of service (PLEASE TRANSLATE)</string>
+    <string name="set_disclaimer">Decision-support disclaimer (PLEASE TRANSLATE)</string>
+    <string name="set_oss_acknowledgements">Open-source acknowledgements (PLEASE TRANSLATE)</string>
+    <string name="set_crash_logs">Crash logs (PLEASE TRANSLATE)</string>
+    <string name="set_crash_log_count">Crash log count (PLEASE TRANSLATE)</string>
+    <string name="set_review_and_share">Review and share (PLEASE TRANSLATE)</string>
+    <string name="set_phase_14">Phase 14 (PLEASE TRANSLATE)</string>
+    <string name="set_edit_initials">Edit initials (PLEASE TRANSLATE)</string>
+    <string name="set_edit_threshold">Edit threshold (PLEASE TRANSLATE)</string>
+    <string name="set_save">Save (PLEASE TRANSLATE)</string>
+    <string name="set_saving">Saving… (PLEASE TRANSLATE)</string>
+    <string name="set_reset_device">Reset device (PLEASE TRANSLATE)</string>
+    <string name="set_reset_device_question">Wipe clinician data? (PLEASE TRANSLATE)</string>
+    <string name="set_reset_device_explanation">Resetting the device wipes the clinician profile on this device, then returns the app to admin provisioning. Predictions and audit history are preserved as chain-of-custody. (PLEASE TRANSLATE)</string>
+    <string name="set_reset_device_message">This will wipe clinician data on this device. Predictions and audit history are preserved. (PLEASE TRANSLATE)</string>
+    <string name="set_reset_device_confirm">Wipe and re-provision (PLEASE TRANSLATE)</string>
+
+    <!-- About tab (Phase 11). -->
+    <string name="about_app_name">Malaria Detector (PLEASE TRANSLATE)</string>
+    <string name="about_version_label">Version (PLEASE TRANSLATE)</string>
+    <string name="about_build_label">build (PLEASE TRANSLATE)</string>
+    <string name="about_license">Hippocratic License 3.0 (PLEASE TRANSLATE)</string>
+    <string name="about_source">Source code (PLEASE TRANSLATE)</string>
+    <string name="about_contributors">Contributors (PLEASE TRANSLATE)</string>
+    <string name="about_maintainer">Maintainer (PLEASE TRANSLATE)</string>
+</resources>

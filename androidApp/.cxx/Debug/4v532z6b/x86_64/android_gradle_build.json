@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/arthur/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/.cxx/Debug/4v532z6b/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/arthur/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/.cxx/Debug/4v532z6b/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "malaria_crash_handler::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86_64",
+      "artifactName": "malaria_crash_handler",
+      "output": "/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/build/intermediates/cxx/Debug/4v532z6b/obj/x86_64/libmalaria_crash_handler.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/arthur/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/arthur/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

@@ -1,0 +1,46 @@
+.claude/
+
+# Gradle
+.gradle/
+build/
+**/build/
+local.properties
+gradle.properties.local
+
+# IntelliJ/Android Studio
+.idea/
+*.iml
+.kotlin/
+
+# Xcode
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# iOS / SPM
+.swiftpm/
+Package.resolved
+# XcodeGen-generated; regenerable via `xcodegen generate --spec iosApp/project.yml --project iosApp`
+*.xcodeproj/
+
+# Generated KMP framework outputs
+iosApp/SharedFramework/Shared.xcframework/
+
+# Model artifacts (Phase -1 deliverable; not source-controlled)
+iosApp/Resources/Models/*.mlpackage
+androidApp/src/main/assets/models/*.tflite
+
+# macOS
+.DS_Store
+
+# Python (legacy notebook side of the repo)
+__pycache__/
+*.pyc
+.venv/
+venv/

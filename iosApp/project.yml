@@ -1,0 +1,112 @@
+# Generate the .xcodeproj by running: xcodegen generate --spec iosApp/project.yml
+name: MalariaDetector
+
+options:
+  bundleIdPrefix: com.malaria
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "26.0"
+  developmentLanguage: en
+  groupSortPosition: top
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_UPCOMING_FEATURE_STRICT_CONCURRENCY: YES
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+    ALWAYS_SEARCH_USER_PATHS: NO
+    CLANG_ENABLE_MODULES: YES
+
+packages:
+  Shared:
+    path: ./SharedFramework
+
+targets:
+  MalariaDetector:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: MalariaDetectorApp.swift
+      - path: Environment
+      - path: Models
+      - path: Persistence
+      - path: Services
+      - path: State
+      - path: Views
+      # Resource paths live alongside source paths; xcodegen routes
+      # non-.swift files into the resources build phase by extension.
+      # `Info.plist` is excluded here because it's wired through
+      # `INFOPLIST_FILE` instead — bundling it twice causes a duplicate.
+      - path: Resources
+        excludes:
+          - "Info.plist"
+      - path: Localization
+    dependencies:
+      - package: Shared
+        product: Shared
+    info:
+      path: Resources/Info.plist
+      properties:
+        NSCameraUsageDescription: "Malaria Detector uses the camera to capture microscope frames for on-device parasite screening. Images are processed locally and never leave the device."
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.malaria.detector
+        PRODUCT_NAME: MalariaDetector
+        INFOPLIST_FILE: Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1"
+        SUPPORTS_MACCATALYST: NO
+        ENABLE_PREVIEWS: YES
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+    scheme:
+      testTargets:
+        - MalariaDetectorTests
+        - MalariaDetectorUITests
+      gatherCoverageData: true
+      preActions:
+        - name: Build Shared XCFramework and sync model registry
+          script: |
+            cd "$SRCROOT/.." && \
+            ./gradlew :shared:assembleSharedXCFramework && \
+            cp -R shared/build/XCFrameworks/release/Shared.xcframework iosApp/SharedFramework/Shared.xcframework && \
+            cp shared/src/commonMain/resources/model_registry.json iosApp/Resources/model_registry.json
+          settingsTarget: MalariaDetector
+
+  MalariaDetectorTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: Tests
+    dependencies:
+      - target: MalariaDetector
+      - package: Shared
+        product: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.malaria.detector.tests
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+        GENERATE_INFOPLIST_FILE: YES
+
+  MalariaDetectorUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: UITests
+    dependencies:
+      - target: MalariaDetector
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.malaria.detector.uitests
+        SWIFT_VERSION: "6.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+        GENERATE_INFOPLIST_FILE: YES

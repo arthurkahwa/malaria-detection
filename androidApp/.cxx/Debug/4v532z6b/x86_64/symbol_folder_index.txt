@@ -1,0 +1,1 @@
+/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/build/intermediates/cxx/Debug/4v532z6b/obj/x86_64

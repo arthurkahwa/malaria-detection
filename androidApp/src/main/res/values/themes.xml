@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Bare-bones platform theme. The Compose-side MalariaTheme handles
+        Material 3 Expressive colors, typography, and shape. This style only
+        exists so AndroidManifest can reference a stable @style/Theme.MalariaDetector.
+    -->
+    <style name="Theme.MalariaDetector" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

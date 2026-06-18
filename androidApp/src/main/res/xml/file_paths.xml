@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FileProvider config (spec §14, §16).
+
+    `cache-path` resolves to `context.cacheDir`; the `exports/` subpath
+    matches ExportService.EXPORT_CACHE_SUBDIR. Only that subdirectory is
+    exposed via the FileProvider for Phase 13 export bundles.
+
+    `files-path` resolves to `context.filesDir`; the `crashlogs/` subpath
+    matches CrashLogStore.CRASHLOGS_SUBDIR. Only that subdirectory is
+    exposed for Phase 14 crash-log sharing via Intent.ACTION_SEND.
+-->
+<paths>
+    <cache-path
+        name="exports"
+        path="exports/" />
+    <files-path
+        name="crashlogs"
+        path="crashlogs/" />
+</paths>

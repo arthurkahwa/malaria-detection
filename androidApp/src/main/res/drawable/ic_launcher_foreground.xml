@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder launcher icon: white "M" centred on the 108dp adaptive grid.
+     Replace with a designed asset before public release. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="108dp"
+        android:height="108dp"
+        android:viewportWidth="108"
+        android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 36,36 L 36,72 L 44,72 L 44,52 L 54,68 L 64,52 L 64,72 L 72,72 L 72,36 L 64,36 L 54,56 L 44,36 Z"/>
+</vector>

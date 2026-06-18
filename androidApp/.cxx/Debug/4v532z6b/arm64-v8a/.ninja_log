@@ -1,0 +1,3 @@
+# ninja log v5
+0	60	1779444654893644069	CMakeFiles/malaria_crash_handler.dir/crash_handler.cpp.o	25a93558e496ee05
+61	117	1779444654949717143	/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/build/intermediates/cxx/Debug/4v532z6b/obj/arm64-v8a/libmalaria_crash_handler.so	8e22f879b16786db

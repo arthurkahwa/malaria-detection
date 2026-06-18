@@ -1,0 +1,19 @@
+name: release-android
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Placeholder — Play Internal upload not implemented
+        run: |
+          echo "TODO: Phase 17 — Play Internal Testing upload via Gradle \
+          Play Publisher. Requires Play Console enrollment by the deployer."
+          exit 0

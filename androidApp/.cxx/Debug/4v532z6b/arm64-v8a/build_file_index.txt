@@ -1,0 +1,1 @@
+/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/src/main/cpp/CMakeLists.txt

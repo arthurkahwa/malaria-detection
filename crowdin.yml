@@ -1,0 +1,46 @@
+# Crowdin configuration for malaria-detector (spec §15).
+#
+# Two file formats from one Crowdin project:
+#  - iOS Xcode String Catalog (Localizable.xcstrings) — Crowdin handles
+#    multi-locale storage natively in the single .xcstrings file.
+#  - Android strings.xml — one per values-XX/ directory.
+#
+# v1 target locales: Swahili (sw), French (fr), Portuguese (pt).
+# v1.1 adds RTL-capable locales once the RTL UI work lands.
+#
+# Auth: set CROWDIN_PROJECT_ID and CROWDIN_PERSONAL_TOKEN in the local
+# environment before running `crowdin upload sources` / `crowdin download`.
+# Never commit either value.
+
+"project_id_env": CROWDIN_PROJECT_ID
+"api_token_env": CROWDIN_PERSONAL_TOKEN
+"base_path": "."
+"base_url": "https://crowdin.com"
+
+preserve_hierarchy: true
+
+files:
+  # iOS — single Xcode String Catalog covers all locales in one file.
+  # Crowdin's "xcstrings" type reads/writes the .xcstrings JSON in place,
+  # so the source and translation paths point at the same file.
+  - source: "/iosApp/Localization/Localizable.xcstrings"
+    translation: "/iosApp/Localization/Localizable.xcstrings"
+    type: "xcstrings"
+    languages_mapping:
+      two_letters_code:
+        # xcstrings uses ISO 639-1 locale codes; pin Crowdin's codes
+        # to the same so the imports land in the right buckets.
+        sw: "sw"
+        fr: "fr"
+        pt: "pt"
+
+  # Android — one strings.xml per values-XX/ directory.
+  # %android_code% expands to the Android resource-qualifier locale code.
+  - source: "/androidApp/src/main/res/values/strings.xml"
+    translation: "/androidApp/src/main/res/values-%android_code%/strings.xml"
+    type: "android"
+    languages_mapping:
+      android_code:
+        sw: "sw"
+        fr: "fr"
+        pt: "pt"

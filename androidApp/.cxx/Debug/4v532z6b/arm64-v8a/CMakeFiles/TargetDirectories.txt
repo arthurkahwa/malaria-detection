@@ -1,0 +1,3 @@
+/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/.cxx/Debug/4v532z6b/arm64-v8a/CMakeFiles/malaria_crash_handler.dir
+/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/.cxx/Debug/4v532z6b/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/arthur/Developer/github/arthurkahwa/malaria-detection/androidApp/.cxx/Debug/4v532z6b/arm64-v8a/CMakeFiles/rebuild_cache.dir
